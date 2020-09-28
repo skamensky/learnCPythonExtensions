@@ -1,0 +1,21 @@
+Setting errors.
+    Return NULL
+    PyErr_SetFromErrno(), no need to increment the exception type
+    If an error has occurred in a chain of functions and error has already been set, return NULL. No need to set errors. This is like allowing error to bubble up naturally.
+    If you call malloc and it results in a failure,must set a failure of PyErr_NoMemory.
+    PyArg_ParseTuple and the like are exceptions in that they return 0/-1 instead of NULL even on failure.
+    If desired, custom errors can be created
+
+Memory Management
+    Py_DECREF, does not accept NULL objects
+    Py_XDECREF, does accept NULL objects
+    If Decrementing results in 0,free is (eventually) called, and the python __del__ is executed. Ensure consistent global state before this happens.
+
+When you want your python method to return None, use this idiom:
+    Py_INCREF(Py_None);return Py_None; Or use the macro Py_RETURN_NONE;
+
+Reading:
+    To Read:
+        https://docs.python.org/3/extending/extending.html#refcounts
+        https://docs.python.org/3/c-api/concrete.html
+        https://pythonextensionpatterns.readthedocs.io/en/latest/index.html

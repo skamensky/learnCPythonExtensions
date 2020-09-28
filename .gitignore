@@ -1,0 +1,5 @@
+cpython
+CMakeLists.txt
+.idea/
+*build*
+venv
