@@ -19,3 +19,4 @@ Reading:
         https://docs.python.org/3/extending/extending.html#refcounts
         https://docs.python.org/3/c-api/concrete.html
         https://pythonextensionpatterns.readthedocs.io/en/latest/index.html
+        https://realpython.com/cpython-source-code-guide/
