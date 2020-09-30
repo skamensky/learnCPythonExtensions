@@ -3,3 +3,5 @@ CMakeLists.txt
 .idea/
 *build*
 venv
+cmake
+Python-*
