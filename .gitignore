@@ -5,3 +5,4 @@ CMakeLists.txt
 venv
 cmake
 Python-*
+embedded_python/run_py_files
