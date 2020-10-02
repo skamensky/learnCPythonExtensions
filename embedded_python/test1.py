@@ -1,2 +1,1 @@
-
-print('Hello from test numba 1!')
+print("Hello from test numba 1!")
