@@ -1,3 +1,10 @@
+# START
+# ignore files without extensions
+*
+!*/
+!*.*
+# END
+
 cpython
 CMakeLists.txt
 .idea/
@@ -5,4 +12,3 @@ CMakeLists.txt
 venv
 cmake
 Python-*
-embedded_python/run_py_files
