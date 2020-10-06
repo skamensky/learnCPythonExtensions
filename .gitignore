@@ -12,3 +12,4 @@ CMakeLists.txt
 venv
 cmake
 Python-*
+__pycache__

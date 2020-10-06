@@ -1,3 +1,4 @@
+import os
 from distutils.core import setup, Extension
 
 module1 = Extension("callback", sources=["callbackmodule.c"])
