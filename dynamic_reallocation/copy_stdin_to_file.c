@@ -7,8 +7,11 @@ typedef struct input_container {
     char *target_path;
 } input_container;
 
+
 input_container *init_input_container(char *text, char *target_path){
-    input_container *ic = malloc(sizeof(ic));
+
+    input_container *ic = malloc(sizeof(*ic));
+
     if(ic==NULL){
         return NULL;
     }
@@ -25,12 +28,12 @@ void destroy_input_container(input_container *ic){
 void write_text_to_file(input_container *ic){
     FILE *fp = fopen(ic->target_path,"w");
     fputs(ic->text,fp);
+    fclose(fp);
 }
 
 void log_text(char* prefix,char *text){
     FILE *fp = fopen("./log.txt","a");
     fprintf(fp,"%s%s\n",prefix,text);
-//    fflush(fp);
     fclose(fp);
 }
 
@@ -57,7 +60,6 @@ char *read_from_input(void){
     char *end_string = "DONE";
     char *last_4 = calloc(4+1,sizeof(last_4));
     strcpy(last_4,"****");
-    last_4[4]='\0';
 
     while(strcmp(last_4,end_string)){
         current_char=fgetc(stdin);
@@ -117,3 +119,9 @@ int main(int argc,char *argv[]){
     destroy_input_container(ic);
     return 0;
 }
+
+
+/*
+ * fixed unclosed file
+ * fix incorrect size allocation
+ */
