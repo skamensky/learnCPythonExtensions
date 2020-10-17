@@ -149,6 +149,8 @@ find_primes_find_primes(PyObject *self, PyObject *args)
     for(int i=1;i<fp_args->return_val[0];++i){
         PyList_SetItem(list,i-1,PyLong_FromLong(fp_args->return_val[i]));
     }
+    free(fp_args->return_val);
+    free(fp_args);
     return list;
 }
 
