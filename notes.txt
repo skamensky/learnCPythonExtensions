@@ -31,7 +31,8 @@ Memory Management
 
 Debugging
     Use the faulthandler module to see the perpetrating line "import faulthandler;faulthandler.enable()"
-
+    Use GDB
+    Use valgrind
 Reading:
     To Read:
         https://docs.python.org/3/c-api/concrete.html
@@ -45,8 +46,10 @@ Reading:
         https://docs.python.org/3/extending/extending.html
 To Try:
     Write a variadic function
-    Write a C function that supports multithreading (see Py_BEGIN_ALLOW_THREADS and friends)
     Write a utility function that takes an array of PyObjects and ref-decrements them. Do the same for ref-incrementing.
+Done:
+    Write a C function that supports multithreading (see Py_BEGIN_ALLOW_THREADS and friends)
+
 
 Questions:
     Is char *argv[] an array of character pointers or a pointer to a character array?
