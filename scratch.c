@@ -1,16 +1,15 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <string.h>
+#include <stdbool.h>
+
 
 int main(){
-    char *last_4 = calloc(4+1,sizeof(last_4));
-    strcpy(last_4,"****");
-    last_4[4]='\0';
-
-//    printf("%zu",strlen(last_4));
-    strlen("****");
-    char i[] = "****";
-    printf("%c\n",i[4]);
+    if(test_prime_generator()){
+        printf("The first 1k prime numbers match\n");
+    }
+    else{
+        printf("WARNING: Prime numbers did not match\n");
+    }
     return 0;
 }
